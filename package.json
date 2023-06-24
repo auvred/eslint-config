@@ -1,6 +1,26 @@
 {
   "name": "@auvred/eslint-config",
   "version": "0.0.0",
+  "packageManager": "pnpm@8.6.3",
+  "author": "auvred <aauvred@gmail.com> (https://github.com/auvred/)",
+  "description": "⚙️ Opinionated ESLint config for Typescript and Vue projects",
+  "keywords": [
+    "eslint",
+    "eslint-config"
+  ],
+  "homepage": "https://github.com/auvred/eslint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/auvred/eslint-config"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint ."
+  },
   "dependencies": {
     "@so1ve/eslint-plugin-prettier": "^0.106.0",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
