@@ -16,7 +16,9 @@
   "license": "MIT",
   "main": "index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "pnpm-workspace.js",
+    "utils"
   ],
   "publishConfig": {
     "access": "public"
