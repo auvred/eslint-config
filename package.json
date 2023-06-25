@@ -23,7 +23,14 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "postinstall": "simple-git-hooks",
     "release": "bumpp && pnpm publish"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,json,yml,yaml,md}": "eslint --fix"
   },
   "dependencies": {
     "@so1ve/eslint-plugin-prettier": "^0.106.0",
@@ -45,7 +52,9 @@
   "devDependencies": {
     "bumpp": "^9.1.1",
     "eslint": "^8.43.0",
-    "prettier": "^2.8.8"
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "simple-git-hooks": "^2.8.1"
   },
   "peerDependencies": {
     "eslint": ">=8.0.0",
