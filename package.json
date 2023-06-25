@@ -46,6 +46,9 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "eslint-plugin-vue": "^9.15.1",
     "eslint-plugin-yml": "^1.8.0",
+    "fast-glob": "^3.2.12",
+    "find-up": "^5.0.0",
+    "js-yaml": "^4.1.0",
     "jsonc-eslint-parser": "^2.3.0",
     "prettier-plugin-jsdoc": "^0.4.2"
   },

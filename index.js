@@ -12,7 +12,6 @@ const prettierConfig = {
 
 /** @type {import('eslint').ESLint.ConfigData} */
 const config = {
-  root: true,
   env: {
     node: true,
     es2022: true,
@@ -39,7 +38,6 @@ const config = {
   },
   settings: {
     'import/resolver': {
-      node: {},
       typescript: {},
     },
   },

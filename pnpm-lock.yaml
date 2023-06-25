@@ -44,6 +44,15 @@ dependencies:
   eslint-plugin-yml:
     specifier: ^1.8.0
     version: 1.8.0(eslint@8.43.0)
+  fast-glob:
+    specifier: ^3.2.12
+    version: 3.2.12
+  find-up:
+    specifier: ^5.0.0
+    version: 5.0.0
+  js-yaml:
+    specifier: ^4.1.0
+    version: 4.1.0
   jsonc-eslint-parser:
     specifier: ^2.3.0
     version: 2.3.0

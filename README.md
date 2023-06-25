@@ -23,32 +23,17 @@ pnpm add -D @auvred/eslint-config eslint prettier
 ```
 > You don't need .eslintignore normally as it has been provided by the preset.
 
-### Some must have settings
-To help [`eslint-plugin-import`](https://github.com/import-js/eslint-plugin-import) properly work with typescript paths, etc., list all tsconfigs for [`eslint-import-resolver-typescript`](https://github.com/import-js/eslint-import-resolver-typescript)
+## Extra configs
+### `@auvred/eslint-config/pnpm-workspace`
 
-If you're using `"references"` in some tsconfig, you should include referenced tsconfigs to this list too
+This config is intended to be used in monorepositories based on [`pnpm`](https://github.com/pnpm/pnpm)
+
+It finds `pnpm-workspace.yml` in the root of the project, resolves the packages listed there and puts:
+- found tsconfigs to the [typescript imports resolver](https://github.com/import-js/eslint-import-resolver-typescript) in the [`import/resolver`](https://github.com/import-js/eslint-plugin-import#importresolver) 
+- project package names scope to the [`import/internal-regex`](https://github.com/import-js/eslint-plugin-import#importinternal-regex)
 ```json
 {
-  "settings": {
-    "import/resolver": {
-      "typescript": {
-        "project": [
-          "tsconfig.json",
-          "packages/*/tsconfig.json",
-          "packages/*/tsconfig.referenced.json"
-        ]
-      }
-    }
-  }
-}
-```
-
-For monorepos, it's recommended to [specify a package scope](https://github.com/import-js/eslint-plugin-import#importinternal-regex). This will allow to split and move internal imports to separated import group
-```json
-{
-  "settings": {
-    "import/internal-regex": "^@your-package-scope/"
-  }
+  "extends": ["@auvred", "@auvred/eslint-config/pnpm-workspace"]
 }
 ```
 
