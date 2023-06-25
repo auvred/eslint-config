@@ -28,7 +28,7 @@ pnpm add -D @auvred/eslint-config eslint prettier
 
 This config is intended to be used in monorepositories based on [`pnpm`](https://github.com/pnpm/pnpm)
 
-It finds `pnpm-workspace.yml` in the root of the project, resolves the packages listed there and puts:
+It finds `pnpm-workspace.yaml` in the root of the project, resolves the packages listed there and puts:
 - found tsconfigs to the [typescript imports resolver](https://github.com/import-js/eslint-import-resolver-typescript) in the [`import/resolver`](https://github.com/import-js/eslint-plugin-import#importresolver) 
 - project package names scope to the [`import/internal-regex`](https://github.com/import-js/eslint-plugin-import#importinternal-regex)
 ```json
