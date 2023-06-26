@@ -18,6 +18,8 @@ pnpm add -D @auvred/eslint-config eslint prettier
 ### Config `.eslintrc`
 ```json
 {
+  // don't forget to mark the root config as root
+  "root": true,
   "extends": "@auvred"
 }
 ```
