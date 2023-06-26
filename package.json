@@ -25,7 +25,6 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "postinstall": "simple-git-hooks",
     "release": "bumpp && pnpm publish"
   },
   "simple-git-hooks": {
