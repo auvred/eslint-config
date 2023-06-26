@@ -157,9 +157,12 @@ const config = {
       },
     },
     {
-      excludedFiles: ['**/*.md/*.*'],
       files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
+      excludedFiles: ['**/*.md/*.*'],
       parser: '@typescript-eslint/parser',
+      rules: {
+        'no-undef': 'off',
+      },
     },
     {
       files: [
@@ -197,6 +200,7 @@ const config = {
         parser: '@typescript-eslint/parser',
       },
       rules: {
+        'no-undef': 'off',
         'prettier-vue/prettier': ['error', prettierConfig],
         'vue/html-quotes': ['error', 'double', { avoidEscape: false }],
         'vue/max-attributes-per-line': [
