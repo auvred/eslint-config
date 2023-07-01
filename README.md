@@ -39,5 +39,63 @@ It finds `pnpm-workspace.yaml` in the root of the project, resolves the packages
 }
 ```
 
+## Configure your editor
+
+### coc.nvim
+Install [`coc-eslint`](https://github.com/neoclide/coc-eslint) extension
+
+```jsonc
+{
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml"
+  ]
+}
+```
+> It's better to put these settings to workspace settings (`.vim/coc-settings.json`)
+
+### VS Code
+Install [`dbaeumer.vscode-eslint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) extension
+
+```jsonc
+{
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": true,
+    "source.fixAll.eslint": true,
+    "source.organizeImports": false
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml"
+  ]
+}
+```
+> It's better to put these settings to workspace settings (`.vscode/settings.json`)
+
+### JetBrains IDEs
+> If you're working on project with eslint >= 8.23.0, it'd be better to update your IDE to version >= 2022.2.2 because of [this issue](https://youtrack.jetbrains.com/issue/WEB-57089/ESLint8.23-TypeError-this.libOptions.parse-is-not-a-function)
+
+1. Open ESLint settings ([docs](https://www.jetbrains.com/help/webstorm/eslint.html#ws_eslint_configure_scope))
+2. Set linting scope to `{**/*,*}.{js,jsx,ts,tsx,vue,html,md,json,jsonc,yaml,yml}`
+
 ## License
 MIT
