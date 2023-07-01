@@ -44,7 +44,7 @@
     "@typescript-eslint/parser": "^5.60.1",
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "^3.5.5",
-    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-import": "npm:eslint-plugin-i@2.27.5-3",
     "eslint-plugin-jsonc": "^2.9.0",
     "eslint-plugin-markdown": "^3.0.0",
     "eslint-plugin-n": "^16.0.1",
