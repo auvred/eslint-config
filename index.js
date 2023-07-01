@@ -259,6 +259,10 @@ const config = {
       },
     },
     {
+      files: ['*.json', '*.json5', '*.jsonc', '.eslintrc'],
+      parser: 'jsonc-eslint-parser',
+    },
+    {
       files: ['package.json'],
       parser: 'jsonc-eslint-parser',
       rules: {
