@@ -73,12 +73,17 @@ const config = {
     'array-callback-return': 'error',
     'block-scoped-var': 'error',
     'default-case-last': 'error',
+    'dot-notation': 'error',
     eqeqeq: ['error', 'smart'],
     'no-alert': 'error',
+    'no-caller': 'error',
     'no-lone-blocks': 'error',
     'no-lonely-if': 'error',
     'no-multi-str': 'error',
+    'no-var': 'error',
     'object-shorthand': ['error', 'always'],
+    'prefer-const': ['error', { destructuring: 'all' }],
+    'prefer-regex-literals': ['error', { disallowRedundantWrapping: true }],
 
     // ignoreDeclarationSort because it will conflict with import/order
     'sort-imports': ['error', { ignoreDeclarationSort: true }],
