@@ -28,7 +28,14 @@ const config = {
     'plugin:yml/prettier',
     'plugin:@typescript-eslint/recommended',
   ],
-  plugins: ['@typescript-eslint', 'n', 'promise', 'unused-imports', 'unicorn'],
+  plugins: [
+    '@typescript-eslint',
+    '@html-eslint',
+    'n',
+    'promise',
+    'unused-imports',
+    'unicorn',
+  ],
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2022,
@@ -177,6 +184,20 @@ const config = {
       parser: '@typescript-eslint/parser',
       rules: {
         'no-undef': 'off',
+      },
+    },
+    {
+      files: ['*.html'],
+      parser: '@html-eslint/parser',
+      plugins: ['@so1ve/prettier'],
+      rules: {
+        '@so1ve/prettier/prettier': [
+          'error',
+          { ...prettierConfig, parser: 'angular' },
+        ],
+        '@html-eslint/require-li-container': 'error',
+        '@html-eslint/require-closing-tags': 'error',
+        '@html-eslint/no-duplicate-attrs': 'error',
       },
     },
     {

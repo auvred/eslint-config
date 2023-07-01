@@ -37,6 +37,8 @@
     "*.{js,json,yml,yaml,md}": "eslint --fix"
   },
   "dependencies": {
+    "@html-eslint/eslint-plugin": "^0.19.0",
+    "@html-eslint/parser": "^0.19.0",
     "@so1ve/eslint-plugin-prettier": "^0.107.1",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",

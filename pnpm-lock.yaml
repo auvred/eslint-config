@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@html-eslint/eslint-plugin':
+    specifier: ^0.19.0
+    version: 0.19.0
+  '@html-eslint/parser':
+    specifier: ^0.19.0
+    version: 0.19.0
   '@so1ve/eslint-plugin-prettier':
     specifier: ^0.107.1
     version: 0.107.1(eslint@8.44.0)(prettier@2.8.8)
@@ -164,6 +170,18 @@ packages:
   /@eslint/js@8.44.0:
     resolution: {integrity: sha512-Ag+9YM4ocKQx9AarydN0KY2j0ErMHNIocPDrVo8zAE44xLTjEtz81OdR68/cydGtk6m6jDb5Za3r2useMzYmSw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  /@html-eslint/eslint-plugin@0.19.0:
+    resolution: {integrity: sha512-4B22mEGaUUJYJQYK8cSpo/And0bHVdZ5t0ph1NCGYmyGwz7SU3nfNFtv9j22IQSYJ0gAf0PEiDyXKpBRygtCcg==}
+    engines: {node: '>=8.10.0'}
+    dev: false
+
+  /@html-eslint/parser@0.19.0:
+    resolution: {integrity: sha512-BkBt6bShQ9vzvK6++mQ4W4qcMCAZ4RawcxOe8K0kR4VARebqMfcco645enajlyyTrr+F9jEXRMXEoHcsWkHjvA==}
+    engines: {node: '>=8.10.0'}
+    dependencies:
+      es-html-parser: 0.0.8
+    dev: false
 
   /@humanwhocodes/config-array@0.11.10:
     resolution: {integrity: sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ==}
@@ -1017,6 +1035,10 @@ packages:
       typed-array-length: 1.0.4
       unbox-primitive: 1.0.2
       which-typed-array: 1.1.9
+    dev: false
+
+  /es-html-parser@0.0.8:
+    resolution: {integrity: sha512-kjMH23xhvTBw/7Ve1Dtb/7yZdFajfvwOpdsgRHmnyt8yvTsDJnkFjUgEEaMZFW+e1OhN/eoZrvF9wehq+waTGg==}
     dev: false
 
   /es-set-tostringtag@2.0.1:
