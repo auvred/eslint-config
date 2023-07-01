@@ -7,7 +7,7 @@
 - Formatting with [Prettier](https://github.com/prettier/prettier)
 - Typescript and Vue support out-of-box
 - Sortable imports
-- Lint also for json, yaml, markdown
+- Lint also for html, json, yaml, markdown
 
 ## Usage
 ### Install
