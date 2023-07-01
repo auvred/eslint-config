@@ -4,7 +4,7 @@
 
 ## Features
 - Single quotes, no semi, trailing commas
-- Formatting with [Prettier](https://github.com/prettier/prettier) and [Vue Prettier](https://github.com/meteorlxy/eslint-plugin-prettier-vue)
+- Formatting with [Prettier](https://github.com/prettier/prettier)
 - Typescript and Vue support out-of-box
 - Sortable imports
 - Lint also for json, yaml, markdown
@@ -16,7 +16,7 @@ pnpm add -D @auvred/eslint-config eslint prettier
 ```
 
 ### Config `.eslintrc`
-```json
+```jsonc
 {
   // don't forget to mark the root config as root
   "root": true,
@@ -33,7 +33,7 @@ This config is intended to be used in monorepositories based on [`pnpm`](https:/
 It finds `pnpm-workspace.yaml` in the root of the project, resolves the packages listed there and puts:
 - found tsconfigs to the [typescript imports resolver](https://github.com/import-js/eslint-import-resolver-typescript) in the [`import/resolver`](https://github.com/import-js/eslint-plugin-import#importresolver) 
 - project package names scope to the [`import/internal-regex`](https://github.com/import-js/eslint-plugin-import#importinternal-regex)
-```json
+```jsonc
 {
   "extends": ["@auvred", "@auvred/eslint-config/pnpm-workspace"]
 }
