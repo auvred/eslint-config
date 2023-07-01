@@ -28,7 +28,7 @@ const config = {
     'plugin:yml/prettier',
     'plugin:@typescript-eslint/recommended',
   ],
-  plugins: ['@typescript-eslint', 'unused-imports', 'unicorn'],
+  plugins: ['@typescript-eslint', 'n', 'unused-imports', 'unicorn'],
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2022,
@@ -125,6 +125,12 @@ const config = {
     'unicorn/prefer-includes': 'error',
     'unicorn/prefer-string-starts-ends-with': 'error',
     'unicorn/throw-new-error': 'error',
+
+    'n/no-deprecated-api': 'error',
+    'n/no-exports-assign': 'error',
+    'n/no-new-require': 'error',
+    'n/no-path-concat': 'error',
+    'n/process-exit-as-throw': 'error',
 
     '@typescript-eslint/no-unused-vars': 'off',
     'no-unused-vars': 'off',

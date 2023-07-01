@@ -20,6 +20,9 @@
     "pnpm-workspace.js",
     "utils"
   ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -42,6 +45,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsonc": "^2.9.0",
     "eslint-plugin-markdown": "^3.0.0",
+    "eslint-plugin-n": "^16.0.1",
     "eslint-plugin-prettier-vue": "^4.2.0",
     "eslint-plugin-unicorn": "^47.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
