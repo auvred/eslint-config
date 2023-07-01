@@ -70,6 +70,7 @@ const config = {
     '*.key',
     // force include
     '!.github',
+    '!.vim',
     '!.vitepress',
     '!.vscode',
     '!.eslintrc*',
