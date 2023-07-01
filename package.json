@@ -1,7 +1,7 @@
 {
   "name": "@auvred/eslint-config",
   "version": "0.2.2",
-  "packageManager": "pnpm@8.6.3",
+  "packageManager": "pnpm@8.6.5",
   "author": "auvred <aauvred@gmail.com> (https://github.com/auvred/)",
   "description": "⚙️ Opinionated ESLint config for Typescript and Vue projects",
   "keywords": [
@@ -34,9 +34,9 @@
     "*.{js,json,yml,yaml,md}": "eslint --fix"
   },
   "dependencies": {
-    "@so1ve/eslint-plugin-prettier": "^0.106.0",
-    "@typescript-eslint/eslint-plugin": "^5.60.0",
-    "@typescript-eslint/parser": "^5.60.0",
+    "@so1ve/eslint-plugin-prettier": "^0.107.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-import": "^2.27.5",
@@ -47,7 +47,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "eslint-plugin-vue": "^9.15.1",
     "eslint-plugin-yml": "^1.8.0",
-    "fast-glob": "^3.2.12",
+    "fast-glob": "^3.3.0",
     "find-up": "^5.0.0",
     "js-yaml": "^4.1.0",
     "jsonc-eslint-parser": "^2.3.0",
@@ -55,8 +55,8 @@
   },
   "devDependencies": {
     "bumpp": "^9.1.1",
-    "eslint": "^8.43.0",
-    "lint-staged": "^13.2.2",
+    "eslint": "^8.44.0",
+    "lint-staged": "^13.2.3",
     "prettier": "^2.8.8",
     "simple-git-hooks": "^2.8.1"
   },
