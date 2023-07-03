@@ -1,6 +1,6 @@
 {
   "name": "@auvred/eslint-config",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "packageManager": "pnpm@8.6.5",
   "author": "auvred <aauvred@gmail.com> (https://github.com/auvred/)",
   "description": "⚙️ Opinionated ESLint config for Typescript and Vue projects",
