@@ -197,7 +197,6 @@ const config = {
           { ...prettierConfig, parser: 'angular' },
         ],
         '@html-eslint/require-li-container': 'error',
-        '@html-eslint/require-closing-tags': 'error',
         '@html-eslint/no-duplicate-attrs': 'error',
       },
     },
