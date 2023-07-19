@@ -190,9 +190,9 @@ const config = {
     {
       files: ['*.html'],
       parser: '@html-eslint/parser',
-      plugins: ['@so1ve/prettier'],
+      plugins: ['prettier'],
       rules: {
-        '@so1ve/prettier/prettier': [
+        '@prettier/prettier': [
           'error',
           { ...prettierConfig, parser: 'angular' },
         ],
@@ -219,25 +219,23 @@ const config = {
         '*.yml',
 
         '*.md',
+
+        '*.vue',
       ],
-      plugins: ['@so1ve/prettier'],
+      plugins: ['prettier'],
       rules: {
-        '@so1ve/prettier/prettier': ['error', prettierConfig],
+        'prettier/prettier': ['error', prettierConfig],
       },
     },
     {
       files: ['*.vue'],
-      extends: [
-        'plugin:vue/vue3-recommended',
-        'plugin:prettier-vue/recommended',
-      ],
+      extends: ['plugin:vue/vue3-recommended'],
       parser: 'vue-eslint-parser',
       parserOptions: {
         parser: '@typescript-eslint/parser',
       },
       rules: {
         'no-undef': 'off',
-        'prettier-vue/prettier': ['error', prettierConfig],
         'vue/html-quotes': ['error', 'double', { avoidEscape: false }],
         'vue/max-attributes-per-line': [
           'error',
