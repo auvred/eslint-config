@@ -188,46 +188,6 @@ const config = {
       },
     },
     {
-      files: ['*.html'],
-      parser: '@html-eslint/parser',
-      plugins: ['prettier'],
-      rules: {
-        '@prettier/prettier': [
-          'error',
-          { ...prettierConfig, parser: 'angular' },
-        ],
-        '@html-eslint/require-li-container': 'error',
-        '@html-eslint/no-duplicate-attrs': 'error',
-      },
-    },
-    {
-      files: [
-        '*.ts',
-        '*.tsx',
-        '*.mts',
-        '*.cts',
-
-        '*.js',
-        '*.mjs',
-        '*.cjs',
-        '*.jsx',
-
-        '*.json',
-        '*.jsonc',
-
-        '*.yaml',
-        '*.yml',
-
-        '*.md',
-
-        '*.vue',
-      ],
-      plugins: ['prettier'],
-      rules: {
-        'prettier/prettier': ['error', prettierConfig],
-      },
-    },
-    {
       files: ['*.vue'],
       extends: ['plugin:vue/vue3-recommended'],
       parser: 'vue-eslint-parser',
@@ -268,6 +228,47 @@ const config = {
         ],
         'vue/no-boolean-default': ['error', 'default-false'],
         'vue/no-empty-component-block': 'error',
+      },
+    },
+    {
+      files: [
+        '*.ts',
+        '*.tsx',
+        '*.mts',
+        '*.cts',
+
+        '*.js',
+        '*.mjs',
+        '*.cjs',
+        '*.jsx',
+
+        '*.json',
+        '*.jsonc',
+
+        '*.yaml',
+        '*.yml',
+
+        '*.md',
+
+        '*.html',
+        '*.vue',
+      ],
+      extends: ['prettier'],
+      plugins: ['prettier'],
+      rules: {
+        'prettier/prettier': ['error', prettierConfig],
+      },
+    },
+    {
+      files: ['*.html'],
+      parser: '@html-eslint/parser',
+      rules: {
+        'prettier/prettier': [
+          'error',
+          { ...prettierConfig, parser: 'angular' },
+        ],
+        '@html-eslint/require-li-container': 'error',
+        '@html-eslint/no-duplicate-attrs': 'error',
       },
     },
     {
