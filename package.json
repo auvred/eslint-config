@@ -29,12 +29,6 @@
     "lint": "eslint .",
     "release": "bumpp && pnpm publish"
   },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,json,yml,yaml,md}": "eslint --fix"
-  },
   "dependencies": {
     "@html-eslint/eslint-plugin": "^0.19.1",
     "@html-eslint/parser": "^0.19.1",
@@ -62,9 +56,7 @@
   "devDependencies": {
     "bumpp": "^9.1.1",
     "eslint": "^8.46.0",
-    "lint-staged": "^13.2.3",
-    "prettier": "^3.0.1",
-    "simple-git-hooks": "^2.9.0"
+    "prettier": "^3.0.1"
   },
   "peerDependencies": {
     "eslint": "^8.0.0",
