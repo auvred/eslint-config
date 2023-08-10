@@ -61,6 +61,7 @@ const config = {
     'pnpm-lock.yaml',
     'yarn.lock',
     '__snapshots__',
+    'cdk.out',
     // ignore for in lint-staged
     '*.png',
     '*.ico',
