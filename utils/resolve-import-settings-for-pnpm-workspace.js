@@ -12,7 +12,7 @@ function readPnpmWorkspaceManifest(manifestPath) {
     return yaml.load(rawPnpmWorkspaceManifest)
   } catch (e) {
     console.warn(
-      `[@auvred/eslint-config] NOTICE: error while parsing pnpm workspace manifest (${manifestPath}):`
+      `[@auvred/eslint-config] NOTICE: error while parsing pnpm workspace manifest (${manifestPath}):`,
     )
     console.warn(e.message)
     throw e
@@ -48,8 +48,8 @@ module.exports = () => {
   for (const packageGlob of pnpmWorkspaceManifest.packages) {
     entryGlobPatterns.push(
       ...['tsconfig.json', 'tsconfig.*.json', 'package.json'].map(f =>
-        packageGlob.replace(/\/?$/, '/' + f)
-      )
+        packageGlob.replace(/\/?$/, '/' + f),
+      ),
     )
   }
 
@@ -75,7 +75,7 @@ module.exports = () => {
   for (const packageJsonPath of packageJsonPaths) {
     try {
       const { name } = JSON.parse(
-        fs.readFileSync(path.join(pnpmWorkspacePath, packageJsonPath), 'utf-8')
+        fs.readFileSync(path.join(pnpmWorkspacePath, packageJsonPath), 'utf-8'),
       )
 
       if (!name || typeof name !== 'string') {
