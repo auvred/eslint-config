@@ -1,3 +1,5 @@
+const prettierPlugins = ['jsdoc', 'pkgsort'].map(p => 'prettier-plugin-' + p)
+
 const prettierConfig = {
   semi: false,
   singleQuote: true,
@@ -6,7 +8,7 @@ const prettierConfig = {
   endOfLine: 'lf',
   singleAttributePerLine: true,
 
-  plugins: ['prettier-plugin-jsdoc'],
+  plugins: prettierPlugins,
   tsdoc: true,
 }
 
@@ -297,78 +299,6 @@ const config = {
     {
       files: ['*.json', '*.json5', '*.jsonc', '.eslintrc'],
       parser: 'jsonc-eslint-parser',
-    },
-    {
-      files: ['package.json'],
-      parser: 'jsonc-eslint-parser',
-      rules: {
-        'jsonc/sort-keys': [
-          'error',
-          {
-            pathPattern: '^$',
-            order: [
-              'name',
-              'displayName',
-              'private',
-              'preview',
-              'version',
-              'packageManager',
-              'publisher',
-              'author',
-              'contributors',
-              'type',
-              'description',
-              'keywords',
-              'homepage',
-              'repository',
-              'bugs',
-              'funding',
-              'categories',
-              'license',
-              'sideEffects',
-              'exports',
-              'bin',
-              'main',
-              'module',
-              'unpkg',
-              'jsdelivr',
-              'types',
-              'typesVersions',
-              'icon',
-              'files',
-              'engines',
-              'activationEvents',
-              'contributes',
-              'eslintConfig',
-              'publishConfig',
-              'scripts',
-              'husky',
-              'simple-git-hooks',
-              'lint-staged',
-              'dependencies',
-              'devDependencies',
-              'optionalDependencies',
-              'peerDependencies',
-              'peerDependenciesMeta',
-              'pnpm',
-              'overrides',
-              'resolutions',
-            ],
-          },
-          {
-            pathPattern: '^(scripts|exports)$',
-            order: { type: 'asc' },
-          },
-          {
-            pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies$',
-            order: { type: 'asc' },
-          },
-          {
-            pathPattern: '^exports.*$',
-            order: ['types', 'require', 'import'],
-          },
-        ],
-      },
     },
     {
       files: ['*.yaml', '*.yml'],

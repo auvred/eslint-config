@@ -16,7 +16,6 @@
   "license": "MIT",
   "main": "index.js",
   "files": [
-    "index.js",
     "pnpm-workspace.js",
     "utils"
   ],
@@ -57,7 +56,8 @@
     "find-up": "^5.0.0",
     "js-yaml": "^4.1.0",
     "jsonc-eslint-parser": "^2.3.0",
-    "prettier-plugin-jsdoc": "^1.0.1"
+    "prettier-plugin-jsdoc": "^1.0.1",
+    "prettier-plugin-pkgsort": "^0.2.1"
   },
   "devDependencies": {
     "bumpp": "^9.1.1",
