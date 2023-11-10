@@ -243,7 +243,6 @@ const config = {
         '@typescript-eslint/no-invalid-void-type': 'error',
         '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'error',
         '@typescript-eslint/prefer-ts-expect-error': 'error',
-        '@typescript-eslint/unified-signatures': 'error',
 
         'no-shadow': 'off',
         '@typescript-eslint/no-shadow': 'error',
