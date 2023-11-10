@@ -186,9 +186,6 @@ const config = {
       files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
       excludedFiles: ['**/*.md/*.*'],
       parser: '@typescript-eslint/parser',
-      rules: {
-        'no-undef': 'off',
-      },
     },
     {
       files: ['*.vue'],
@@ -198,7 +195,7 @@ const config = {
         parser: '@typescript-eslint/parser',
       },
       rules: {
-        'no-undef': 'off',
+        'vue/attribute-hyphenation': 'error',
         'vue/html-quotes': ['error', 'double', { avoidEscape: false }],
         'vue/max-attributes-per-line': [
           'error',
@@ -207,8 +204,10 @@ const config = {
             multiline: 1,
           },
         ],
+        'vue/no-template-shadow': 'error',
         'vue/one-component-per-file': 'off',
         'vue/padding-line-between-blocks': ['error', 'always'],
+        'vue/require-macro-variable-name': 'error',
         'vue/component-tags-order': [
           'error',
           {
@@ -218,6 +217,8 @@ const config = {
 
         'vue/component-name-in-template-casing': ['error', 'PascalCase'],
         'vue/custom-event-name-casing': ['error', 'camelCase'],
+        'vue/define-emits-declaration': ['error', 'type-based'],
+        'vue/define-props-declaration': ['error', 'type-based'],
         'vue/define-macros-order': [
           'error',
           {
@@ -231,6 +232,25 @@ const config = {
         ],
         'vue/no-boolean-default': ['error', 'default-false'],
         'vue/no-empty-component-block': 'error',
+        'vue/no-ref-object-reactivity-loss': 'error',
+        'vue/require-typed-ref': 'error',
+      },
+    },
+    {
+      files: ['*.ts', '*.tsx', '*.mts', '*.cts', '*.vue'],
+      rules: {
+        'no-undef': 'off',
+        '@typescript-eslint/no-invalid-void-type': 'error',
+        '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'error',
+        '@typescript-eslint/prefer-ts-expect-error': 'error',
+        '@typescript-eslint/unified-signatures': 'error',
+
+        'no-shadow': 'off',
+        '@typescript-eslint/no-shadow': 'error',
+        '@typescript-eslint/no-useless-empty-export': 'error',
+        '@typescript-eslint/prefer-for-of': 'error',
+
+        '@typescript-eslint/explicit-function-return-type': 'error',
       },
     },
     {
