@@ -215,7 +215,13 @@ const config = {
           },
         ],
 
-        'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+        'vue/component-name-in-template-casing': [
+          'error',
+          'PascalCase',
+          {
+            registeredComponentsOnly: false,
+          },
+        ],
         'vue/custom-event-name-casing': ['error', 'camelCase'],
         'vue/define-emits-declaration': ['error', 'type-based'],
         'vue/define-props-declaration': ['error', 'type-based'],
