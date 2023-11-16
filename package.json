@@ -27,7 +27,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "release": "bumpp && pnpm publish"
+    "release": "bumpp"
   },
   "dependencies": {
     "@html-eslint/eslint-plugin": "^0.19.1",
