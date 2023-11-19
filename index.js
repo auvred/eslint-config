@@ -1,5 +1,6 @@
 const prettierPlugins = ['jsdoc', 'pkgsort'].map(p => 'prettier-plugin-' + p)
 
+/** @type {import('prettier').Config} */
 const prettierConfig = {
   semi: false,
   singleQuote: true,
@@ -7,6 +8,7 @@ const prettierConfig = {
   vueIndentScriptAndStyle: true,
   endOfLine: 'lf',
   singleAttributePerLine: true,
+  htmlWhitespaceSensitivity: 'ignore',
 
   plugins: prettierPlugins,
   tsdoc: true,
