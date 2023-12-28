@@ -25,9 +25,9 @@ export function typescript(): FlatESLintConfig[] {
         'import/no-unresolved': 'off',
 
         ...autoRenameRules(
-          pluginTs.configs['eslint-recommended'].overrides[0].rules,
+          pluginTs.configs['eslint-recommended']!.overrides![0]!.rules!,
         ),
-        ...autoRenameRules(pluginTs.configs.recommended.rules),
+        ...autoRenameRules(pluginTs.configs.recommended!.rules!),
 
         'ts/adjacent-overload-signatures': 'error',
         'ts/consistent-type-assertions': [

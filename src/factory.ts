@@ -10,10 +10,11 @@ import {
   vue,
 } from './configs'
 
+import type { Awaitable } from './utils'
 import type { FlatESLintConfig } from 'eslint-define-config'
 
-export function auvred(): FlatESLintConfig[] {
-  const configs: FlatESLintConfig[][] = [
+export async function auvred(): Promise<FlatESLintConfig[]> {
+  const configs: Awaitable<FlatESLintConfig[]>[] = [
     [
       {
         linterOptions: {
@@ -32,5 +33,5 @@ export function auvred(): FlatESLintConfig[] {
     vue(),
   ]
 
-  return configs.flat()
+  return (await Promise.all(configs)).flat()
 }

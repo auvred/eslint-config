@@ -1,3 +1,4 @@
+// @ts-expect-error - missing types
 import configsJs from '@eslint/js'
 
 import { GLOB_JSTS, GLOB_JSTS_EXT } from '../globs'

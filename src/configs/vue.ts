@@ -1,12 +1,17 @@
 import parserTs from '@typescript-eslint/parser'
-import pluginVue from 'eslint-plugin-vue'
-import parserVue from 'vue-eslint-parser'
 
 import { GLOB_VUE } from '../globs'
+import { interopDefault } from '../utils'
 
 import type { FlatESLintConfig } from 'eslint-define-config'
 
-export function vue(): FlatESLintConfig[] {
+export async function vue(): Promise<FlatESLintConfig[]> {
+  const [parserVue, pluginVue] = await Promise.all([
+    interopDefault(import('vue-eslint-parser')),
+    // @ts-expect-error - missing types
+    interopDefault(import('eslint-plugin-vue')),
+  ] as const)
+
   return [
     {
       plugins: {
@@ -21,7 +26,7 @@ export function vue(): FlatESLintConfig[] {
           ecmaFeatures: {
             jsx: true,
           },
-          parser: parserTs,
+          parser: parserTs as unknown as string,
         },
       },
       processor: pluginVue.processors['.vue'],
