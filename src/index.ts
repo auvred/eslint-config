@@ -1,0 +1,1 @@
+export { auvred } from "./factory";

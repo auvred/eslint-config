@@ -1,0 +1,29 @@
+{
+  "include": ["./src/**/*.ts"],
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "types": [],
+
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    "lib": ["ES2022"],
+    "moduleDetection": "force",
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+
+    "noErrorTruncation": true,
+    "preserveWatchOutput": true,
+
+    "skipLibCheck": true
+  }
+}
