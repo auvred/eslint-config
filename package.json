@@ -15,16 +15,17 @@
     "eslint",
     "eslint-config"
   ],
-  "main": "index.js",
+  "exports": "./dist/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "pnpm-workspace.js",
-    "utils"
+    "dist"
   ],
   "engines": {
     "node": ">=16.0.0"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsup --format esm --clean --dts",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "release": "pnpx bumpp"
