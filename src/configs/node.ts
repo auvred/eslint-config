@@ -1,5 +1,4 @@
-// @ts-expect-error - missing types
-import pluginNode from 'eslint-plugin-n'
+import { pluginNode } from '../plugins'
 
 import type { FlatESLintConfig } from 'eslint-define-config'
 

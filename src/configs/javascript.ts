@@ -1,17 +1,34 @@
-// @ts-expect-error - missing types
-import configsJs from '@eslint/js'
-// @ts-expect-error - missing types
-import pluginUnusedImports from 'eslint-plugin-unused-imports'
+import globals from 'globals'
 
 import { GLOB_JSTS, GLOB_JSTS_EXT } from '../globs'
+import { configsJs, pluginUnusedImports } from '../plugins'
 
 import type { FlatESLintConfig } from 'eslint-define-config'
 
 export function javascript(): FlatESLintConfig[] {
   return [
     {
+      languageOptions: {
+        ecmaVersion: 2022,
+        globals: {
+          ...globals.browser,
+          ...globals.es2021,
+          ...globals.node,
+          document: 'readonly',
+          navigator: 'readonly',
+          window: 'readonly',
+        },
+        parserOptions: {
+          ecmaFeatures: {
+            jsx: true,
+          },
+          ecmaVersion: 2022,
+          sourceType: 'module',
+        },
+        sourceType: 'module',
+      },
       plugins: {
-        'unused-imports': pluginUnusedImports
+        'unused-imports': pluginUnusedImports,
       },
       rules: {
         ...configsJs.configs.recommended.rules,
