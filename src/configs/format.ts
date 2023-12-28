@@ -52,7 +52,9 @@ export function format(): FlatESLintConfig[] {
 
             plugins: ['prettier-plugin-jsdoc'],
             tsdoc: true,
-          } satisfies prettier.Options & prettierPluginJsdoc.Options,
+          } satisfies prettier.Options &
+            // TODO: use just Options after https://github.com/hosseinmd/prettier-plugin-jsdoc/pull/222 is resoved
+            Partial<prettierPluginJsdoc.JsdocOptions>,
         ],
       },
     },
