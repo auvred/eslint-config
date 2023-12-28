@@ -2,9 +2,13 @@
   "include": ["./src/**/*.ts"],
   "compilerOptions": {
     "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
+    "noImplicitReturns": true,
     "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
     "strict": true,
 
     "module": "ESNext",
@@ -15,15 +19,12 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
-
     "lib": ["ES2022"],
     "moduleDetection": "force",
-    "target": "ES2022",
-    "useDefineForClassFields": true,
+    "target": "ESNext",
 
-    "noErrorTruncation": true,
-    "preserveWatchOutput": true,
+    "skipLibCheck": true,
 
-    "skipLibCheck": true
+    "noErrorTruncation": true
   }
 }
