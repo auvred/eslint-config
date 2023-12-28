@@ -1,5 +1,7 @@
 // @ts-expect-error - missing types
 import configsJs from '@eslint/js'
+// @ts-expect-error - missing types
+import pluginUnusedImports from 'eslint-plugin-unused-imports'
 
 import { GLOB_JSTS, GLOB_JSTS_EXT } from '../globs'
 
@@ -8,6 +10,9 @@ import type { FlatESLintConfig } from 'eslint-define-config'
 export function javascript(): FlatESLintConfig[] {
   return [
     {
+      plugins: {
+        'unused-imports': pluginUnusedImports
+      },
       rules: {
         ...configsJs.configs.recommended.rules,
 
@@ -105,6 +110,16 @@ export function javascript(): FlatESLintConfig[] {
         'prefer-rest-params': 'error',
         'prefer-spread': 'error',
         'prefer-template': 'error',
+
+        'no-unused-vars': 'off',
+        'unused-imports/no-unused-vars': [
+          'error',
+          {
+            vars: 'all',
+            args: 'after-used',
+          },
+        ],
+        'unused-imports/no-unused-imports': 'error',
       },
     },
     {

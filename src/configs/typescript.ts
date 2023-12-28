@@ -29,6 +29,9 @@ export function typescript(): FlatESLintConfig[] {
         ),
         ...autoRenameRules(pluginTs.configs.recommended!.rules!),
 
+        // handled by unused-imports
+        'ts/no-unused-vars': 'off',
+
         'ts/adjacent-overload-signatures': 'error',
         'ts/consistent-type-assertions': [
           'error',
