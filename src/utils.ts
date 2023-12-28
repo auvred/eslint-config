@@ -6,18 +6,18 @@ export function renameRules<T>(
     Object.entries(rules).map(([key, value]) => {
       for (const [from, to] of Object.entries(mapFromTo)) {
         if (key.startsWith(from)) {
-          return [to + key.slice(from.length), value];
+          return [to + key.slice(from.length), value]
         }
       }
-      return [key, value];
+      return [key, value]
     }),
-  );
+  )
 }
 
 export function autoRenameRules<T>(
   rules: Record<string, T>,
 ): Record<string, T> {
   return renameRules(rules, {
-    "@typescript-eslint/": "ts/",
-  });
+    '@typescript-eslint/': 'ts/',
+  })
 }

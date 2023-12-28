@@ -1,1 +1,1 @@
-export { auvred } from "./factory";
+export { auvred } from './factory'

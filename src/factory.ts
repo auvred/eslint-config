@@ -1,16 +1,16 @@
 import {
-  ignores,
   format,
+  ignores,
   imports,
   javascript,
   jsonc,
-  typescript,
-  vue,
   node,
+  typescript,
   unicorn,
-} from "./configs";
+  vue,
+} from './configs'
 
-import type { FlatESLintConfig } from "eslint-define-config";
+import type { FlatESLintConfig } from 'eslint-define-config'
 
 export function auvred(): FlatESLintConfig[] {
   const configs: FlatESLintConfig[][] = [
@@ -30,7 +30,7 @@ export function auvred(): FlatESLintConfig[] {
     typescript(),
     unicorn(),
     vue(),
-  ];
+  ]
 
-  return configs.flat();
+  return configs.flat()
 }
