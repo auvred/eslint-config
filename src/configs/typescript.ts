@@ -4,8 +4,7 @@ import parserTs from '@typescript-eslint/parser'
 import { GLOB_TS, GLOB_TSX, GLOB_VUE } from '../globs'
 import { autoRenameRules } from '../utils'
 
-import type { OptionsOverrides } from '../types'
-import type { FlatConfigItem } from '../types'
+import type { FlatConfigItem, OptionsOverrides } from '../types'
 
 export function typescript({
   overrides,

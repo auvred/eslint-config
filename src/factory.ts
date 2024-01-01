@@ -15,12 +15,9 @@ import {
 } from './configs'
 import { type Awaitable, interopDefault } from './utils'
 
-import type { Options, OptionsOverrides } from './types'
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { FlatConfigItem, Options, OptionsOverrides } from './types'
 
-export async function auvred(
-  options: Options = {},
-): Promise<FlatESLintConfig[]> {
+export async function auvred(options: Options = {}): Promise<FlatConfigItem[]> {
   const {
     vue: enableVue = ['vue', 'nuxt', 'vitepress', '@slidev/cli'].some(i =>
       isPackageExists(i),
@@ -28,7 +25,7 @@ export async function auvred(
     typescript: enableTypeScript = isPackageExists('typescript'),
   } = options
 
-  const configs: Awaitable<FlatESLintConfig[]>[] = [
+  const configs: Awaitable<FlatConfigItem[]>[] = [
     [
       {
         linterOptions: {
@@ -38,7 +35,7 @@ export async function auvred(
     ],
     interopDefault(import('eslint-config-flat-gitignore')).then(r => [r()]),
     ignores(),
-    imports(),
+    imports(options.imports),
     javascript(),
     jsonc(),
     node(),

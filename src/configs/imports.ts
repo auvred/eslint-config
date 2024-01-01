@@ -1,9 +1,12 @@
 import { pluginImport } from '../plugin-imports'
 
-import type { FlatConfigItem } from '../types'
+import type { FlatConfigItem, ImportsOptionsOverrides } from '../types'
 
-export function imports(): FlatConfigItem[] {
-  return [
+export function imports({
+  overrides,
+  internalRegex,
+}: ImportsOptionsOverrides = {}): FlatConfigItem[] {
+  const config: FlatConfigItem[] = [
     {
       plugins: {
         import: pluginImport,
@@ -26,6 +29,7 @@ export function imports(): FlatConfigItem[] {
           'error',
           { count: 1, considerComments: true },
         ],
+        'import/no-duplicates': 'error',
         'import/no-named-default': 'error',
         // ignoreDeclarationSort because it conflicts with import/order
         'sort-imports': ['error', { ignoreDeclarationSort: true }],
@@ -51,7 +55,19 @@ export function imports(): FlatConfigItem[] {
         ],
 
         'import/no-unresolved': 'error',
+
+        ...overrides,
       },
     },
   ]
+
+  if (internalRegex) {
+    config.push({
+      settings: {
+        'import/internal-regex': internalRegex,
+      },
+    })
+  }
+
+  return config
 }

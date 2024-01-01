@@ -3,8 +3,7 @@ import parserTs from '@typescript-eslint/parser'
 import { GLOB_VUE } from '../globs'
 import { interopDefault } from '../utils'
 
-import type { OptionsOverrides } from '../types'
-import type { FlatConfigItem } from '../types'
+import type { FlatConfigItem, OptionsOverrides } from '../types'
 
 export async function vue({ overrides }: OptionsOverrides = {}): Promise<
   FlatConfigItem[]
