@@ -7,14 +7,11 @@ import {
   GLOB_MD_IN_MD,
   GLOB_VUE_IN_MD,
 } from '../globs'
-import { interopDefault } from '../utils'
+import { pluginMarkdown } from '../plugin-imports'
 
 import type { FlatESLintConfig } from 'eslint-define-config'
 
 export async function markdown(): Promise<FlatESLintConfig[]> {
-  // @ts-expect-error - missing types
-  const pluginMarkdown = await interopDefault(import('eslint-plugin-markdown'))
-
   return [
     {
       files: [GLOB_MD],
