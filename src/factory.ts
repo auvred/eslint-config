@@ -6,6 +6,7 @@ import {
   jsonc,
   markdown,
   node,
+  perfectionist,
   typescript,
   unicorn,
   vue,
@@ -32,6 +33,7 @@ export async function auvred(): Promise<FlatESLintConfig[]> {
     typescript(),
     unicorn(),
     vue(),
+    perfectionist(),
     markdown(),
     format(),
   ]
