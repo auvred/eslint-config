@@ -110,6 +110,14 @@ export function javascript(): FlatESLintConfig[] {
         'no-throw-literal': 'error',
         'no-undefined': 'error',
         'no-unneeded-ternary': ['error', { defaultAssignment: false }],
+        'no-unused-expressions': [
+          'error',
+          {
+            allowShortCircuit: true,
+            allowTaggedTemplates: true,
+            allowTernary: true,
+          },
+        ],
         'no-useless-call': 'error',
         'no-useless-catch': 'error',
         'no-useless-concat': 'error',
