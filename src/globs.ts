@@ -6,7 +6,11 @@ export const GLOB_VUE = '**/*.vue'
 
 export const GLOB_JSON = '**/*.json?(5|c)'
 export const GLOB_YAML = '**/*.y?(a)ml'
+
 export const GLOB_MD = '**/*.md'
+export const GLOB_MD_IN_MD = `${GLOB_MD}/*.md`
+export const GLOB_JSTS_IN_MD = `${GLOB_MD}/${GLOB_JSTS}`
+export const GLOB_VUE_IN_MD = `${GLOB_MD}/${GLOB_VUE}`
 
 export const GLOB_HTML = '**/*.html'
 

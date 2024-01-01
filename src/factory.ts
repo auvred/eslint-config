@@ -4,6 +4,7 @@ import {
   imports,
   javascript,
   jsonc,
+  markdown,
   node,
   typescript,
   unicorn,
@@ -23,7 +24,6 @@ export async function auvred(): Promise<FlatESLintConfig[]> {
       },
     ],
     ignores(),
-    format(),
     imports(),
     javascript(),
     jsonc(),
@@ -31,6 +31,8 @@ export async function auvred(): Promise<FlatESLintConfig[]> {
     typescript(),
     unicorn(),
     vue(),
+    markdown(),
+    format(),
   ]
 
   return (await Promise.all(configs)).flat()

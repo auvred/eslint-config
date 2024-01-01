@@ -1,23 +1,55 @@
 import * as parserPlain from 'eslint-parser-plain'
-import pluginPrettier from 'eslint-plugin-prettier'
 
 import {
   GLOB_GRAPHQL,
   GLOB_HTML,
   GLOB_JSON,
   GLOB_JSTS,
+  GLOB_MD,
   GLOB_POSTCSS,
   GLOB_STYLE,
   GLOB_VUE,
   GLOB_YAML,
 } from '../globs'
+import pluginAuvred from '../plugin'
 
 import type { FlatESLintConfig } from 'eslint-define-config'
 import type * as prettier from 'prettier'
 import type prettierPluginJsdoc from 'prettier-plugin-jsdoc'
 
 export function format(): FlatESLintConfig[] {
+  const basePrettierOptions: prettier.Options = {
+    semi: false,
+    singleQuote: true,
+    arrowParens: 'avoid',
+    vueIndentScriptAndStyle: true,
+    endOfLine: 'lf',
+    singleAttributePerLine: true,
+    htmlWhitespaceSensitivity: 'ignore',
+  }
+
   return [
+    {
+      plugins: {
+        auvred: pluginAuvred,
+      },
+    },
+    {
+      files: [GLOB_MD],
+      languageOptions: {
+        parser: parserPlain,
+      },
+      rules: {
+        'auvred/prettier': [
+          'error',
+          {
+            ...basePrettierOptions,
+            parser: 'markdown',
+            embeddedLanguageFormatting: 'off',
+          } satisfies prettier.Options,
+        ],
+      },
+    },
     {
       files: [GLOB_STYLE, GLOB_POSTCSS, GLOB_YAML, GLOB_GRAPHQL],
       languageOptions: {
@@ -35,21 +67,11 @@ export function format(): FlatESLintConfig[] {
         GLOB_YAML,
         GLOB_GRAPHQL,
       ],
-      plugins: {
-        prettier: pluginPrettier,
-      },
       rules: {
-        'prettier/prettier': [
+        'auvred/prettier': [
           'error',
           {
-            semi: false,
-            singleQuote: true,
-            arrowParens: 'avoid',
-            vueIndentScriptAndStyle: true,
-            endOfLine: 'lf',
-            singleAttributePerLine: true,
-            htmlWhitespaceSensitivity: 'ignore',
-
+            ...basePrettierOptions,
             plugins: ['prettier-plugin-jsdoc'],
             tsdoc: true,
           } satisfies prettier.Options &

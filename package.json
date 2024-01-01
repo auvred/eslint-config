@@ -25,23 +25,27 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "build": "tsup --format esm --clean --dts",
+    "build": "tsup",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "release": "pnpx bumpp"
+    "release": "pnpx bumpp",
+    "postinstall": "pnpm build --no-dts"
   },
   "peerDependencies": {
-    "eslint": "^8.0.0",
+    "eslint": "^8.40.0",
     "prettier": "^3.0.0"
   },
   "dependencies": {
     "@eslint/js": "^8.56.0",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
+    "eslint-formatting-reporter": "^0.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-merge-processors": "^0.1.0",
     "eslint-parser-plain": "^0.1.0",
     "eslint-plugin-i": "^2.29.1",
     "eslint-plugin-jsonc": "^2.11.2",
+    "eslint-plugin-markdown": "^3.0.1",
     "eslint-plugin-n": "^16.5.0",
     "eslint-plugin-prettier": "^5.1.2",
     "eslint-plugin-unicorn": "^50.0.1",
@@ -50,9 +54,12 @@
     "globals": "^13.23.0",
     "jsonc-eslint-parser": "^2.4.0",
     "prettier-plugin-jsdoc": "^1.3.0",
+    "synckit": "^0.8.8",
     "vue-eslint-parser": "^9.3.2"
   },
   "devDependencies": {
+    "@types/eslint": "^8.56.0",
+    "@types/node": "^20.10.5",
     "eslint": "^8.56.0",
     "eslint-define-config": "^2.0.0",
     "prettier": "^3.1.1",
