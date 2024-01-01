@@ -1,4 +1,4 @@
-import { pluginUnicorn } from '../plugins'
+import { pluginUnicorn } from '../plugin-imports'
 
 import type { FlatESLintConfig } from 'eslint-define-config'
 

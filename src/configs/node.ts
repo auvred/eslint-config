@@ -1,4 +1,4 @@
-import { pluginNode } from '../plugins'
+import { pluginNode } from '../plugin-imports'
 
 import type { FlatESLintConfig } from 'eslint-define-config'
 
