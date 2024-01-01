@@ -10,8 +10,8 @@ import {
   unicorn,
   vue,
 } from './configs'
+import { type Awaitable, interopDefault } from './utils'
 
-import type { Awaitable } from './utils'
 import type { FlatESLintConfig } from 'eslint-define-config'
 
 export async function auvred(): Promise<FlatESLintConfig[]> {
@@ -23,6 +23,7 @@ export async function auvred(): Promise<FlatESLintConfig[]> {
         },
       },
     ],
+    interopDefault(import('eslint-config-flat-gitignore')).then(r => [r()]),
     ignores(),
     imports(),
     javascript(),
