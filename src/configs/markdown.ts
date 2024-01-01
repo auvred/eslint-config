@@ -55,6 +55,8 @@ export async function markdown(): Promise<FlatESLintConfig[]> {
 
         'unused-imports/no-unused-imports': 'off',
         'unused-imports/no-unused-vars': 'off',
+
+        'import/no-unresolved': 'off',
       },
     },
   ]
