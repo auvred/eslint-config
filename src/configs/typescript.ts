@@ -10,6 +10,7 @@ export function typescript(): FlatESLintConfig[] {
   return [
     {
       plugins: {
+        // @ts-expect-error - ¯\_(ツ)_/¯
         ts: pluginTs,
       },
     },

@@ -9,6 +9,7 @@ export function jsonc(): FlatESLintConfig[] {
   return [
     {
       plugins: {
+        // @ts-expect-error - ¯\_(ツ)_/¯
         jsonc: pluginJsonc,
       },
     },
