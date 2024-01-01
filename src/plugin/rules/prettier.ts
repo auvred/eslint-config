@@ -1,3 +1,7 @@
+// Adapted from the eslint-plugin-format
+// https://github.com/antfu/eslint-plugin-format/blob/acfb3d2d3b8a06e72a5412deb8cd0fee88f05370/src/rules/prettier.ts
+// License: https://github.com/antfu/eslint-plugin-format/blob/acfb3d2d3b8a06e72a5412deb8cd0fee88f05370/LICENSE
+
 import { messages, reportDifferences } from 'eslint-formatting-reporter'
 
 import { getPrettierFormatSyncFn } from '../workers'
@@ -7,10 +11,6 @@ import type { Rule } from 'eslint'
 const rule: Rule.RuleModule = {
   meta: {
     type: 'layout',
-    docs: {
-      description: 'Use Prettier to format code',
-      category: 'Stylistic',
-    },
     fixable: 'whitespace',
     schema: [
       {
