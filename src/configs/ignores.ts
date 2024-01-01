@@ -1,6 +1,6 @@
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { FlatConfigItem } from '../types'
 
-export function ignores(): FlatESLintConfig[] {
+export function ignores(): FlatConfigItem[] {
   return [
     {
       ignores: [

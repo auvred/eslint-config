@@ -4,13 +4,15 @@ import parserTs from '@typescript-eslint/parser'
 import { GLOB_TS, GLOB_TSX, GLOB_VUE } from '../globs'
 import { autoRenameRules } from '../utils'
 
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { OptionsOverrides } from '../types'
+import type { FlatConfigItem } from '../types'
 
-export function typescript(): FlatESLintConfig[] {
+export function typescript({
+  overrides,
+}: OptionsOverrides = {}): FlatConfigItem[] {
   return [
     {
       plugins: {
-        // @ts-expect-error - ¯\_(ツ)_/¯
         ts: pluginTs,
       },
     },
@@ -64,6 +66,8 @@ export function typescript(): FlatESLintConfig[] {
         'ts/prefer-function-type': 'error',
         'ts/prefer-ts-expect-error': 'error',
         'ts/unified-signatures': 'error',
+
+        ...overrides,
       },
     },
   ]

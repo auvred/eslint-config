@@ -1,9 +1,9 @@
 import { GLOB_JSTS, GLOB_VUE } from '../globs'
 import { pluginPerfectionist } from '../plugin-imports'
 
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { FlatConfigItem } from '../types'
 
-export function perfectionist(): FlatESLintConfig[] {
+export function perfectionist(): FlatConfigItem[] {
   return [
     {
       plugins: {

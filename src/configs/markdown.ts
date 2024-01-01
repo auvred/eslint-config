@@ -9,9 +9,9 @@ import {
 } from '../globs'
 import { pluginMarkdown } from '../plugin-imports'
 
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { FlatConfigItem } from '../types'
 
-export async function markdown(): Promise<FlatESLintConfig[]> {
+export async function markdown(): Promise<FlatConfigItem[]> {
   return [
     {
       files: [GLOB_MD],

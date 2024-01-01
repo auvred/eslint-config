@@ -3,9 +3,12 @@ import parserTs from '@typescript-eslint/parser'
 import { GLOB_VUE } from '../globs'
 import { interopDefault } from '../utils'
 
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { OptionsOverrides } from '../types'
+import type { FlatConfigItem } from '../types'
 
-export async function vue(): Promise<FlatESLintConfig[]> {
+export async function vue({ overrides }: OptionsOverrides = {}): Promise<
+  FlatConfigItem[]
+> {
   const [parserVue, pluginVue] = await Promise.all([
     interopDefault(import('vue-eslint-parser')),
     // @ts-expect-error - missing types
@@ -151,6 +154,8 @@ export async function vue(): Promise<FlatESLintConfig[]> {
         'vue/no-useless-concat': 'error',
         'vue/object-shorthand': 'error',
         'vue/prefer-template': 'error',
+
+        ...overrides,
       },
     },
   ]

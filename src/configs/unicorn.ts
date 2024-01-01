@@ -1,8 +1,8 @@
 import { pluginUnicorn } from '../plugin-imports'
 
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { FlatConfigItem } from '../types'
 
-export function unicorn(): FlatESLintConfig[] {
+export function unicorn(): FlatConfigItem[] {
   return [
     {
       plugins: {

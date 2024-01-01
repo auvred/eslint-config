@@ -3,13 +3,12 @@ import parserJsonc from 'jsonc-eslint-parser'
 
 import { GLOB_JSON, GLOB_PACKAGEJSON, GLOB_TSCONFIG } from '../globs'
 
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { FlatConfigItem } from '../types'
 
-export function jsonc(): FlatESLintConfig[] {
+export function jsonc(): FlatConfigItem[] {
   return [
     {
       plugins: {
-        // @ts-expect-error - ¯\_(ツ)_/¯
         jsonc: pluginJsonc,
       },
     },

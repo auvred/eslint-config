@@ -3,9 +3,9 @@ import globals from 'globals'
 import { GLOB_JSTS, GLOB_JSTS_EXT } from '../globs'
 import { configsJs, pluginUnusedImports } from '../plugin-imports'
 
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { FlatConfigItem } from '../types'
 
-export function javascript(): FlatESLintConfig[] {
+export function javascript(): FlatConfigItem[] {
   return [
     {
       languageOptions: {

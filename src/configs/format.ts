@@ -13,11 +13,11 @@ import {
 } from '../globs'
 import pluginAuvred from '../plugin'
 
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { FlatConfigItem } from '../types'
 import type * as prettier from 'prettier'
 import type prettierPluginJsdoc from 'prettier-plugin-jsdoc'
 
-export function format(): FlatESLintConfig[] {
+export function format(): FlatConfigItem[] {
   const basePrettierOptions: prettier.Options = {
     semi: false,
     singleQuote: true,
