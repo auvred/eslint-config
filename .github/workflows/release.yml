@@ -18,8 +18,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install
-        run: corepack enable && pnpm install --frozen-lockfile
+      - name: Install & Build
+        run: corepack enable && pnpm install --frozen-lockfile && pnpm build
 
       - name: Lint & Typecheck
         run: pnpm lint && pnpm typecheck
