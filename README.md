@@ -76,7 +76,7 @@ Install [`dbaeumer.vscode-eslint`](https://marketplace.visualstudio.com/items?it
 
 Install [`coc-eslint`](https://github.com/neoclide/coc-eslint) extension
 
-```jsonc
+```json
 {
   "eslint.experimental.useFlatConfig": true,
   "eslint.autoFixOnSave": true,
