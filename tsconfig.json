@@ -2,13 +2,11 @@
   "include": ["./src/**/*.ts"],
   "compilerOptions": {
     "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
     "strict": true,
 
     "module": "ESNext",
