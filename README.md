@@ -1,6 +1,6 @@
 # @auvred/eslint-config
 
-> Some code snippets were taken from these awesome repos: [`@so1ve/eslint-config`](https://github.com/so1ve/eslint-config), [`@antfu/eslint-config`](https://github.com/antfu/eslint-config)
+> Partially based on these awesome configs: [`@so1ve/eslint-config`](https://github.com/so1ve/eslint-prettier-config), [`@antfu/eslint-config`](https://github.com/antfu/eslint-config)
 
 ## Features
 
@@ -8,7 +8,6 @@
 - Formatting with [Prettier](https://github.com/prettier/prettier)
 - Typescript and Vue support out-of-box
 - Sortable imports
-- Lint also for html, json, yaml, markdown
 
 ## Usage
 
@@ -18,73 +17,40 @@
 pnpm add -D @auvred/eslint-config eslint prettier
 ```
 
-### Config `.eslintrc`
+### Config `eslint.config.js`
 
-```jsonc
-{
-  // don't forget to mark the root config as root
-  "root": true,
-  "extends": "@auvred"
-}
+In ESM projects:
+
+```js
+import { auvred } from '@auvred/eslint-config'
+
+export default auvred()
 ```
 
-> You don't need .eslintignore normally as it has been provided by the preset.
+In CJS projects:
 
-## Extra configs
+```js
+module.exports = (async () => {
+  const { auvred } = await import('@auvred/eslint-config')
 
-### `@auvred/eslint-config/pnpm-workspace`
-
-This config is intended to be used in monorepositories based on [`pnpm`](https://github.com/pnpm/pnpm)
-
-It finds `pnpm-workspace.yaml` in the root of the project, resolves the packages listed there and puts:
-
-- found tsconfigs to the [typescript imports resolver](https://github.com/import-js/eslint-import-resolver-typescript) in the [`import/resolver`](https://github.com/import-js/eslint-plugin-import#importresolver)
-- project package names scope to the [`import/internal-regex`](https://github.com/import-js/eslint-plugin-import#importinternal-regex)
-
-```jsonc
-{
-  "extends": ["@auvred", "@auvred/eslint-config/pnpm-workspace"]
-}
+  return auvred()
+})()
 ```
 
 ## Configure your editor
-
-### coc.nvim
-
-Install [`coc-eslint`](https://github.com/neoclide/coc-eslint) extension
-
-```jsonc
-{
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue",
-    "html",
-    "markdown",
-    "json",
-    "jsonc",
-    "yaml"
-  ]
-}
-```
-
-> It's better to put these settings to workspace settings (`.vim/coc-settings.json`)
 
 ### VS Code
 
 Install [`dbaeumer.vscode-eslint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) extension
 
-```jsonc
+```json
 {
+  "eslint.experimental.useFlatConfig": true,
   "prettier.enable": false,
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
-    "source.addMissingImports": true,
-    "source.fixAll.eslint": true,
-    "source.organizeImports": false
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
   "eslint.validate": [
     "javascript",
@@ -97,11 +63,42 @@ Install [`dbaeumer.vscode-eslint`](https://marketplace.visualstudio.com/items?it
     "json",
     "jsonc",
     "yaml"
+  ],
+  "eslint.rules.customizations": [
+    { "rule": "auvred/prettier", "severity": "off" }
   ]
 }
 ```
 
 > It's better to put these settings to workspace settings (`.vscode/settings.json`)
+
+### coc.nvim
+
+Install [`coc-eslint`](https://github.com/neoclide/coc-eslint) extension
+
+```jsonc
+{
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml"
+  ],
+  "eslint.rules.customizations": [
+    { "rule": "auvred/prettier", "severity": "off" }
+  ]
+}
+```
+
+> It's better to put these settings to workspace settings (`.vim/coc-settings.json`)
 
 ### JetBrains IDEs
 

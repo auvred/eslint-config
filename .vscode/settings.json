@@ -1,10 +1,10 @@
 {
+  "eslint.experimental.useFlatConfig": true,
   "prettier.enable": false,
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
-    "source.addMissingImports": true,
-    "source.fixAll.eslint": true,
-    "source.organizeImports": false
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
   "eslint.validate": [
     "javascript",
@@ -17,5 +17,8 @@
     "json",
     "jsonc",
     "yaml"
+  ],
+  "eslint.rules.customizations": [
+    { "rule": "auvred/prettier", "severity": "off" }
   ]
 }
