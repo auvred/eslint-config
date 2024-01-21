@@ -13,9 +13,10 @@ import {
   unicorn,
   vue,
 } from './configs'
-import { type Awaitable, interopDefault } from './utils'
+import { interopDefault } from './utils'
 
 import type { FlatConfigItem, Options, OptionsOverrides } from './types'
+import type { Awaitable } from './utils'
 
 export async function auvred(options: Options = {}): Promise<FlatConfigItem[]> {
   const {
