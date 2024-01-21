@@ -28,7 +28,7 @@
     "build": "tsup",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "release": "pnpx bumpp"
+    "release": "npx -y bumpp"
   },
   "peerDependencies": {
     "eslint": "^8.40.0",
