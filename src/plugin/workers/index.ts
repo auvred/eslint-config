@@ -10,7 +10,7 @@ export const dirWorkers = fileURLToPath(new URL('./workers', import.meta.url))
 
 let prettierSyncFn: Syncify<PrettierFormatWorkerFn> | null = null
 export function getPrettierFormatSyncFn(): Syncify<PrettierFormatWorkerFn> {
-  return (prettierSyncFn ??= createSyncFn(
+  return (prettierSyncFn ??= createSyncFn<PrettierFormatWorkerFn>(
     path.join(dirWorkers, 'prettier-format.js'),
   ))
 }
