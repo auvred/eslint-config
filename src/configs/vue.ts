@@ -1,4 +1,4 @@
-import parserTs from '@typescript-eslint/parser'
+import tseslint from 'typescript-eslint'
 
 import { GLOB_VUE } from '../globs'
 import { interopDefault } from '../utils'
@@ -28,7 +28,7 @@ export async function vue({ overrides }: OptionsOverrides = {}): Promise<
           ecmaFeatures: {
             jsx: true,
           },
-          parser: parserTs as unknown as string,
+          parser: tseslint.parser as unknown as string,
         },
       },
       processor: pluginVue.processors['.vue'],

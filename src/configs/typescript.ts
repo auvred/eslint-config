@@ -1,5 +1,4 @@
-import pluginTs from '@typescript-eslint/eslint-plugin'
-import parserTs from '@typescript-eslint/parser'
+import tseslint from 'typescript-eslint'
 
 import { GLOB_TS, GLOB_TSX, GLOB_VUE } from '../globs'
 import { autoRenameRules } from '../utils'
@@ -12,13 +11,13 @@ export function typescript({
   return [
     {
       plugins: {
-        ts: pluginTs,
+        ts: tseslint.plugin,
       },
     },
     {
       files: [GLOB_TS, GLOB_TSX],
       languageOptions: {
-        parser: parserTs,
+        parser: tseslint.parser,
       },
     },
     {
@@ -26,10 +25,13 @@ export function typescript({
       rules: {
         'import/no-unresolved': 'off',
 
+        ...autoRenameRules(tseslint.configs.eslintRecommended.rules!),
         ...autoRenameRules(
-          pluginTs.configs['eslint-recommended']!.overrides![0]!.rules!,
+          tseslint.configs.recommended
+            .map(config => config.rules)
+            .filter(Boolean)
+            .reduce((a, b) => ({ ...a, ...b }), {})!,
         ),
-        ...autoRenameRules(pluginTs.configs.recommended!.rules!),
 
         // handled by unused-imports
         'ts/no-unused-vars': 'off',
