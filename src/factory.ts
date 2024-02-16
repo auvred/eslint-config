@@ -34,7 +34,9 @@ export async function auvred(options: Options = {}): Promise<FlatConfigItem[]> {
         },
       },
     ],
-    interopDefault(import('eslint-config-flat-gitignore')).then(r => [r()]),
+    interopDefault(import('eslint-config-flat-gitignore')).then(r => [
+      r({ strict: false }),
+    ]),
     ignores(),
     imports(options.imports),
     javascript(),
