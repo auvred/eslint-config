@@ -135,6 +135,7 @@ export async function vue({ overrides }: OptionsOverrides = {}): Promise<
         'vue/padding-line-between-blocks': ['error', 'always'],
         'vue/prefer-define-options': 'error',
         'vue/prefer-true-attribute-shorthand': 'error',
+        'vue/require-explicit-slots': 'error',
         'vue/require-macro-variable-name': 'error',
         'vue/require-typed-ref': 'error',
         'vue/v-for-delimiter-style': 'error',
