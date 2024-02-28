@@ -33,6 +33,8 @@ export function javascript(): FlatConfigItem[] {
       rules: {
         ...configsJs.configs.recommended.rules,
 
+        'no-extra-semi': 'off',
+
         'array-callback-return': 'error',
         'no-constructor-return': 'error',
         'no-self-compare': 'error',
