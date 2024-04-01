@@ -51,7 +51,7 @@ export function format(): FlatConfigItem[] {
       },
     },
     {
-      files: [GLOB_STYLE, GLOB_POSTCSS, GLOB_YAML, GLOB_GRAPHQL],
+      files: [GLOB_STYLE, GLOB_POSTCSS, GLOB_YAML, GLOB_GRAPHQL, GLOB_HTML],
       languageOptions: {
         parser: parserPlain,
       },
